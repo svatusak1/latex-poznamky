@@ -1,0 +1,80 @@
+\documentclass{book}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\newtheorem{definition}{Definition}
+\begin{document}
+
+\subsection{Nachweisen der Umkehrbarkeit mit der 1. Ableitung}
+
+\[f(x) = \sqrt{3x + 1} -1 \quad \text{umkehrbarkeit für} x > 0\]
+\[3x+1 = 0\]
+\[x = -\frac 13\]
+\[f'(x) = \frac 3{2\sqrt{3x+1}} \; x>-\frac13\]
+\[ \Rightarrow f\text{ ist umkehrbar für } x > -\frac13\]
+$\Rightarrow$ damit auch f für $x>0$ ist umkehrbar
+
+\[f(x) = 4e^{-2x+1}\quad \text{umkehrbar für } x > 0\]
+\[f'(x) = -8 e^{-2x+1}\]
+$f'(x)<0$ für alle $x$
+$\Rightarrow f $ ist umkehrbar für $x \in \mathbb{R}$
+also $f$ ist umkehrbar für $x>0$
+
+\[f(x) = 2x^4\]
+\[f'(x) = 8x^3\]
+\[f'(x) = 0\]
+\[x = 0\]
+\[I_1 = (-\infty;0)\]
+\[I_2 = (0;\infty)\]
+auf $I_1$ oder $I_2$ ist f umkehrbar
+
+
+\[f(x) = \frac{2x}{x-2} = 2x (x-1)^{-1}\]
+\[D_f = \mathbb{R} \ \{1\}\]
+f ist eine hyperbole $\rightarrow$ umkehrbar im $\mathbb{R} \ \{1\} = D_f$
+
+\[f(x) = \sqrt{25-4x^2} = (25-4x^2)^{-1}\]
+\[D_f = [-\frac 52; \frac52]\]
+\[f'(x) = -4\frac x{\sqrt{-4x^2+25}}\]
+\[f'(x) = 0\]
+\[x = 0\]
+\[ I_1 = (-\frac 52;0) \; ; \; I_2 = (0;\frac 52)\]
+$\Rightarrow$ f ist auf $I_1$ oder $I_2$ umkehrbar 
+
+\begin{definition}
+\begin{itemize}
+\item Für $x_1 \not = x_2$ gilt stets $f(x_1) \not = f(x_2)$
+\item $f(x_1) = f(x_2) $ gilt nut für $x_1 =  x_2$
+\end{itemize}
+\end{definition}
+
+\subsection{Bestimmung des Terms der Umkehrfunktion}
+
+\begin{definition}
+Sei f eine umkehrbare Funktion. Dann heißt die Funktion $\bar{f}$ oben mit
+\[\bar{f} oben (f(x)) = x \; mit D_{\bar{f}} = W_f \; und W_{\bar{f}} = D_f\]
+die \textbf{Umkehrfunktion von f}.
+\end{definition}
+
+Sei $f(x) = \frac 1{1+x} \; ; \; x > -1$
+\begin{enumerate}
+\item Man löst $y = \frac 1{1+x} \; ; \; x > -1$ nach x auf: 
+\\
+$ x = \frac {1-y}y$
+\\
+Dies zeigt, dass durch $\bar{f}(y) = frac {1-y}y$ jedem y-Wert ein x-Wert zugeordnet wird.
+\item Um f und $\bar{f}$ im gleichen Koordinatensystem zeichnen zu können, macht man einen  \textbf{Variablentausch} und man schreibt x statt y:
+\[\bar{f}(x) = \frac {1-x}x\]
+\end{enumerate}
+
+\[f(x) = 3x - 4 = y \]
+\[x = \frac {y+4}3\]
+\[y = \frac {x+4}4\]
+\[ \Rightarrow \bar{f} (x) = \frac{x+4}3\]
+Nachweis, dass $\bar{f}$ eine Umkehrfunktion von f ist:
+Wir nutezen: $\bar{f}(f(x)) = x$
+\[\Rightarrow \bar{f}(f(x)) = \frac1 3 (3x-4) +\frac43 = x - \frac43 + \frac43 = x\]
+
+
+\end{document}

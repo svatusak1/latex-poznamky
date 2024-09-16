@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{amsmath} 
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+
+\begin{document}
+
+
+\section{Vyroky}
+
+\textbf{Výrok} je srozumitelné zdělení
+může být:
+\begin{itemize}
+  \item pravda
+  \item  nepravda
+\end{itemize}
+značení: \textit{A, B, V, \dots} (výrokové proměné)
+pravdivostní hodnota výroku: $ p(A) \in {0, 1} $
+
+\textbf{negace výrou V} je výrok: není pravda, že V.
+(pět je větší než 0)' => pět je menší nebo rovno 0
+znaceni: A', $ \neg A $
+$ A: x \in (2;3> $
+$ A': x \in (-\infty;2> \cup (3;\infty) $
+
+\textbf{Kvantifikátor} 
+Slovní spojení, které vyjařuje počet nebo odhad počtu objektů, pro něž platí nějaký výrok (alespoň dvě židle ve třídě vržou)
+velký $ \forall $ pro vsechny
+malý $ \exists $ existuje alespon 1
+\begin{itemize}
+    \item $ [\forall x \in \mathbb{R}: x^2 > x]' \Leftrightarrow [ \exists x \in \mathbb{R}: x^2 \leq x ]$
+
+\item $ [A: \forall a, b \in \mathbb{R}: \exists x \in \mathbb{R}: ax + b = 0]' \Leftrightarrow [A': \exists a, b \in \mathbb{R}: \forall x \in \mathbb{R}: ax +b \not= 0 ]$
+
+\item $[ \forall x \in \mathbb{N} : \exists y \in \mathbb{N}: y > x]' \Leftrightarrow [\exists x \in \mathbb{N}: \forall y \in \mathbb{N}: y <= x ]$
+
+\item (Nikdo nic není)' $ \Leftrightarrow $ Vždycky alespoň jeden člověk něco ví
+\end{itemize}
+
+\textbf{Vyroky}
+Složené výroky
+\begin{itemize}
+    \item konjunkce $ \wedge $
+    \item disjunkce $ \land $
+    \item ekvivalence $ \Rightarrow $
+    \item implikace $ \Leftrightarrow $ 
+\end{itemize}
+
+\begin{table}
+\caption{Základní logické spojky}
+\centering
+  \begin{tabular}{c c | c | c | c | c | c |}
+
+      A & B & $ A \land B $ & $ A \wedge B $ & $ A \implies B $ & $ B \implies A $ & $ A \Leftrightarrow $ \\
+      \hline
+      1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+
+  \end{tabular}
+\end{table}
+
+\textbf{Tautologie} je vždy pravdivý složený výrok - Morganovy zákony
+\begin{itemize}
+\item $ (A \land B)' \Leftrightarrow (A' \wedge B') $
+    \item $ A \Leftrightarrow A $
+        \item $ A \wedge A' $
+    \item $ (A \wedge B)' \Leftrightarrow (A' \land B')$
+    \item $ (A \implies B) \Leftrightarrow (A \land B') $
+    \item $ (A \Leftrightarrow B)' \Leftrightarrow [ (A \land B') \wedge (A' \land B) ] $
+\end{itemize}
+
+\begin{exmp}
+
+    \textit{Kdy Platí: } $ [(A \land B) \implies (B' \wedge C)]'$
+
+    \begin{table}
+    \centering
+      \begin{tabular}{ c c c | c | c | c | c }
+    
+          A & B & C & $ A' \land B $ & $ B' \wedge C $ & $ (A' \land B) \implies (B' \wedge C) $ & $ [(A \land B) \implies (B' \wedge C)]' $ \\
+          \hline
+          1 & 1 & 1 & 0 & 1 & 1 & 0 \\
+          1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+          0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+          0 & 0 & 1 & 0 & 1 & 1 & 0 \\
+          1 & 1 & 1 & 0 & 0 & 1 & 0 \\
+          1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+          0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+          0 & 0 & 1 & 0 & 1 & 1 & 0 \\
+
+
+      
+      \end{tabular}
+    \end{table}
+
+zadání $ \Leftrightarrow (A' \land B \land C') $
+
+\end{exmp}
+
+$ (A \implies B) \not \Leftrightarrow (B \implies A) $ má jinou tabulku!!
+
+\textbf{Obměna} časté v důkazech
+$ (A \implies B) \Leftrightarrow (B' \implies A') $
+
+\begin{table}
+\caption{Obměna}
+\centering
+  \begin{tabular}{ c c | c | c}
+
+      A & B & $ A \implies B $ & $ B' \implies A' $ \\
+      \hline
+      1 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 1 & 1 \\
+      0 & 0 & 1 & 1 
+    
+  
+  \end{tabular}
+\end{table}
+
+$ x > 1 \implies x^2 > x $
+obměna: $ x^2 \leq x \implies x \leq 1 $
+
+\begin{exmp}
+$ (A \land B) \implies (C \wedge D) $
+\begin{itemize}
+  \item neg: $ (A \land B) \land (C' \land D')  $
+  \item obměna: $ (C' \land D') \implies (A' \wedge B') $
+\end{itemize}
+
+\end{exmp}
+
+
+
+
+
+\subsection{minutovka}
+
+\end{document}
+

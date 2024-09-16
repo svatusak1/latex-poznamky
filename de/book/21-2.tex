@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\section{Eigenschaften der Intgrale}
+\begin{definition}Eigenschaften von Integralen
+\\
+\begin{enumerate}[a)]
+\item Linearität 
+\begin{itemize}
+\item \[\int_a^b c \cdot f(x) dx = c \cdot \int_a^b f(x) dx\]
+\item \[\int_a^b g(x) + f(x) dx = \int_a^b g(x) dx + \int_a^b f(x) dx \]
+\end{itemize}
+\item Vertauschung der Grenzen\[ \int_a^b f(x) dx = -\int_b^a f(x) dx\]
+\item Gleiche Grenzen \[\int_a^a f(x) dx = 0\]
+\item Additivität \[\int_a^b f(x) dx + \int_b^c f(x) dx = \int_a^c f(x) dx\]
+\item Monotonie \[f(x) \leq g(x) \Rightarrow \int_a^b f(x) dx \leq \int_1^b g(x) dx\]
+
+\end{enumerate}
+
+\subsection{Beweise von Eigenschaften den Integralen}
+\subsubsection{Beweis von Linearität 1}
+
+\[\text{Behauptung: } \int_a^b c \cdot f(x) dx = c \cdot \int_a^b f(x) dx\]
+\[ \text{Beweis: } \int_a^b cf(x) dx = \int_a^b cF'(x) dx = [cF(x)]_a^b\]
+\[ = cF(b) - cF(a) = c (F(b) - F(a)) = c \int_a^b f(x) dx \; \text{ q.e.d.}\]
+
+\subsubsection{Beweis von Linearität 2}
+\[\text{Behauptung: } \int_a^b g(x) + f(x) dx = \int_a^b g(x) dx + \int_a^b f(x) dx \]
+\[ \text{Beweis: } \int_a^b g(x) + f(x) dx = [F(x) +G(x)]_a^b = F(b) +G(b) - F(b) - G(b) \]
+\[= F(a) - F(b) + G(a) - G(b) = \int_a^b f(x) dx + \int_a^b g(x) dx \; \text{ q.e.d.}\]
+
+\subsection{Anwendung der Eigenschaften von Integralen}
+
+\begin{itemize}
+
+\item 
+\[\int_1^2 \frac {X^3-2}{x^2}dx = \int_1^2 \frac {X^3}{x^2}dx - \int_1^2 \frac 2{x^2}dx\]
+\[ = \int_1^2 x \;dx - 2 \cdot \int_1^2 \frac 1 {x^2}dx\]
+
+\item
+ \[\int_2^4 \frac{\sqrt{x}+x^2}{x-1} dx - \int_2^4 \frac{\sqrt{x}+1}{x-1}dx = \int_2^4 \frac{x^2+1}{x-1}dx\]
+\[= \int_2^4 \frac{(x+1)(x-1)}{x-1}dx = \int_2^4 x+1 dx\]
+\end{itemize}
+
+
+
+\end{definition}
+\section{Flächeinhalt zwischen Schaubild und x-Achse}
+
+\begin{definition}
+Sei f eine stetige Funktion auf I = [a;b]. Bei der Berechnung des Flächeinhalts zwischen den Graphen $G_f$ einer Funktion f und den x-Achse über  denn Intervall I = [a;b] geht man wie folgt vor:
+
+\begin{enumerate}[i)]
+
+\item Bestimmung der Nullstelen ($f(x) \overset{!}{=}0$) von f auf I = [a;b]
+\item Man berechnet die orientierten Flächeinhalt (Itegrale) über den Teilintervallen ($[a;x_0],[x_0;b]$)
+\item Man addiert die Betrage der einzelnen Integralen (Inhalte der Teilflächen)
+
+\end{enumerate}
+
+\end{definition}
+
+\begin{definition}
+Sei f eine stetige Funnkion auf I = [a;b]. Bei der BErechnung des Flächeinhalts zwischen den Graphen $G_f$ einer Funktion f und der x-Achse geht man wie folgt vor:
+
+\begin{enumerate}[i)]
+
+\item Bestimmung der Nullstelen ($f(x) \overset{!}{=}0$) von f $\Rightarrow \; x_{01}, x_{02}, \dots$
+
+\item Man berechnet die orientierten Flächeinhalt (Itegrale) über den Teilintervallen $[x_{01}, x_{02}]$ etc.
+
+\item Man addiert die Betrage der einzelnen Integralen (Inhalte der Teilflächen)
+\end{enumerate}
+
+
+\end{definition}
+
+
+
+
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[a4paper]{book}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\chapter{Exponentielfunktionen mit Parameter}
+
+\begin{definition}
+Enthält ein Funktionsterm einer Funktion f neben der \textbf{Funktionsvariablen x} einen \textbf{Parameter} z.B. \textbf{h, t oder k}, dann gehört  zu jedem Wert für den Parameter eine Funktion $f_h : x \rightarrow f_h(x)$.
+
+\begin{itemize}
+\item Die Menge aller (unendliche vielen) Funktionen $f_h$ heißt \textbf{Funktionenschar}.
+\item Die Menge aller Graphen $G_h$ heißt \textbf{Kurven- / Graphenschar}.
+\end{itemize}
+\end{definition}
+
+Beispiele:
+\begin{itemize}
+\item $f_k(x) = (e^x-k)e^x$ ; $k \in \mathbb{R}$
+\item $f_k(x)$
+\end{itemize}
+
+\begin{definition}
+Beim Ableiten eiener Funktionenschar $f_t$ wird der Parameter t wie eine Zahl behandelt!
+\end{definition}
+Beispiel: Die Funktionenschar $f_t(x) = (e^x-t)e^x$ besitzt den Tiefpunkt $T_t(\ln(\frac t2)\vert - \frac {t^2}4)$. Weisen Sie dies rechnerisch nach (die notwendige Bedingung reicht hier aus!).
+
+\[f_t(\ln(\frac t2)) = (e^{\ln(\frac t2)}-t)e^{\ln(\frac t2)} = -\frac {t^2}4\]
+\[f_t '(x) = e^{2x} - te^x)' = 2e^{2x} - t e^x = (2e^x - t) e^x\]
+\[f_t ' (x) = 0  \Leftrightarrow  (2e^x - t) e^x = 0\]
+\[2e^x - t = 0\]
+\[x = \ln(\frac t2)\]
+
+
+\end{document}

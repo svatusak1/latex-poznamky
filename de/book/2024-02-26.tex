@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+
+Gegeben ist eine über dem Intervall [a;b] integrierbare Funktion f. Rotiert die Fläche zwischen dem Graphen von f und der x-Achse über dem Intervall [a;b] um die x-Achse, so entsteht ein Rotationskörper. Sein Volumen V berechnet man mit \[V = \pi \int_a^b(f(x))^2dx\]
+
+\end{definition}
+
+\begin{definition}
+
+Eine Fläche A wird von den Graphen der Funktion der auf [a;b] differenzierbaren f und g über dem Interval [a;b] eingeschlossen. Rotiert diese Fläche A um die die x-Achse, berechnet man das Volumen V des  aufstehendes Körpers mit ($f(x) > g(x) auf [a;b]$)
+
+\[V = \pi \int_a^b (f(x))^2dx - \pi \int_a^b (g(x))^2dx = \pi \int_a^b (f(x))^2 - (g(x))^2dx\]
+
+\end{definition}
+
+
+\end{document}

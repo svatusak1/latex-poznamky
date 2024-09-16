@@ -1,0 +1,39 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+        highlight math style= {enhanced, %<-- needed for the ’remember’ options
+            colframe=red,colback=red!10!white,boxsep=0pt}
+        }
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\chapter {Funktionen mit Parametern}
+
+Gegeben isst die Parameterfunktion $f_k $ mit dem Funktionsterm
+
+\[f_k(x) = x^2 \cdot e^{kx} \. , \. D_{f_k} = \mathbb{R}\]
+
+und dem Parameter $k \in \mathbb{R}. Die Graphen de Schar sind $G_k$
+
+
+
+\end{document}

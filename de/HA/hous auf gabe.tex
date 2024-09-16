@@ -1,0 +1,98 @@
+\documentclass[twocolumn]{article}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\begin{document}
+
+\section{35:6}
+\subsection{gegeben: }
+ $f(x) = 9-x^2 \text{für} x \in [0;3]$
+Rechteck (0;0) P(u; f(u)) 
+Rechteck solte die maximalem Umfang haben
+\subsection{Prozess}
+\[U = a*b \]
+\[a = u\]
+ \[b = f(u)\]
+ \[U = u*f(u) = u*(9-u^2) = -u^3+9u\]
+ \[U' = -3u^2+9\]
+ \[U'' = -6u\]
+ \[U' = 0 \rightarrow -3u^2+9 = 0\]
+ \[3u^2 = 9\quad u^2 = 3\]
+ \[u = \pm \sqrt3\]
+ \[U''(-\sqrt3) > 0 \rightarrow Maximum\]
+  \[U''(\sqrt3) < 0 \rightarrow Minimum\]
+ \[D = \mathbb{R} \]
+ \[\pm \sqrt3 \in D\]
+ \subsection{Lösung}
+ Recheck mit Punkt $P(\sqrt3; f(\sqrt3))$ hat der maximalen Umfang
+ 
+ \section{35:7}
+ \subsection{gegeben:}
+ \begin{itemize}
+ \item von Oben offene Kartonkiste
+ \item quadratischer Grundfläche
+ \item flächeinhalt = $100cm^2 $
+ \item möglichst größte Volume.
+ \end{itemize}
+ 
+ \subsection{Prozess}
+ \[A = a^2 + 4 ab = 100\]
+ \[V= a^2 b\]
+\[ b = \frac {100-a^2}{4a}\]
+\[V = a^2 \cdot \frac {100-a^2}{4a} = -\frac{a^3}4+25a\]
+\[V' = -\frac34 a^2+25 \]
+\[V'' = -\frac32 a\]
+\[V' = 0 \rightarrow -\frac34 a^2+25 = 0\]
+\[\frac34 a^2 = 25\]
+\[a^2 = \frac{100}3\]
+\[a = \pm \sqrt{\frac{100}3}\]
+\[V''(\dots) <0 \rightarrow Maximum\]
+\[V''(-\dots) >0 \rightarrow Minimum\]
+\[D = \mathbb{R}^0_+\]
+\[\sqrt{\frac{100}3} \in D\]
+\[V(0) = 0\]
+
+\subsection{Lösung}
+\[a = \sqrt{\frac{100}3} \approx 0,2\]
+\[b = \frac {100-a^2}{4a} = \frac {100-(\sqrt{\frac{100}3})^2}{4\sqrt{\frac{100}3}} =\frac5{\sqrt3} \approx 2,9\]
+\[V = (\sqrt{\frac{100}3})^2 \cdot \frac5{\sqrt3} = \frac {500}{3\sqrt3} \approx 96,2\]
+
+\section{36:14}
+\subsection{gegeben:}
+\begin{itemize}
+\item Tunnel $= f(x) : -3 < x <3$
+\item $f(x) = -\frac12 x^2+4,5 $
+\item Wagen: 2,4 x 3,5 m
+\item Vermutung: Abstand zwischen rechten oben Punkt des Wagen kann mann mit $\sqrt{(1,2-u)^2+(3,5-(0,5u^2+4,5))^2}$ berechnen.
+\item berechne u mit d(u) wird minimal und den Abstand
+\end{itemize}
+
+\subsection {Prozess}
+Nullpunkte der Parabel(Tunnel): $-\frac12 x^2+4,5 = 0$
+\[\frac12 x^2 = 4,5\]
+\[x = \pm 3 \rightarrow \text{Mittelpunkt ist }0\]
+$\Rightarrow $rechte oben Punkt der Wagen ist P(1,2 ; 3,5)
+Von hier kann man die Pythagoras benutzen $\Rightarrow$ 
+\[d^2 = a^2 + b^2\]
+\[a = u-1,2\]
+\[ b = 3,5-f(u) = 3,5-(0,5u^2+4,5))\]
+\[ \Rightarrow d = \sqrt{(1,2-u)^2+(3,5-(0,5u^2+4,5))^2}\]
+
+kleinste Abstand:
+\[d =\sqrt{(1,2-u)^2+(3,5-(0,5u^2+4,5))^2} = \sqrt{(1,2-u)^2+(3,5 - 0,5u^2-4,5)^2} \]
+\[d= \sqrt{(1,2-u)^2+(- 0,5u^2-1)^2} = \sqrt{1,44+u^2-2,4u+\frac14u^4-u^2+1}\]
+\[d = \sqrt{\frac14u^4-2,4u+2,44}\]
+\[d' = \frac12 (\frac14u^4-2,4u+2,44) ^{-\frac12} \cdot (u^3-2,4) = \frac{u^3-2,4}{2 \sqrt{(\frac14u^4-2,4u+2,44)}}\]
+\[d' = 0 \Leftrightarrow u^3-2,4 = 0\]
+\[u^3 = 2,4\]
+\[u = \sqrt[3]{2,4} \approx 1,34\]
+\[d = \sqrt{\frac14\sqrt[3]{2,4}^4-2,4\sqrt[3]{2,4}+2,44} \approx  0,5\]
+
+
+
+
+
+
+
+
+
+\end{document}

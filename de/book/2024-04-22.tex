@@ -1,0 +1,71 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+        highlight math style= {enhanced, %<-- needed for the ’remember’ options
+            colframe=red,colback=red!10!white,boxsep=0pt}
+        }
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+    \hfill
+    \begin{itemize}
+        \item $a_nx^n +a_n-1x^{n-1} + \dots + ax+a_0$ mit $n \in \mathbb{N}$ und $a_n; \; a_{n-1};\;\dots;\;a_1;\;a_0 \ \in \mathbb{R} \; ; \; a_n \not = 0$
+            heißt \textbf{Polynom vom Grad n} und $ a_n; \; a_{n-1};\;\dots;\;a_1;\;a_0 \ \in \mathbb{R}$ heißen \textbf{Koeffizienten}.
+        \item $f(x) = a_nx^n +a_n-1x^{n-1} + \dots + a_1x+a_0$ heißt \textbf{ganzrationale Funktion von Grad n}
+    \item Seien $g(x) $ und $h(x)$ Polynome vom Grad z bzww. vom Grad n, heißt $f(x) = \frac{g(x)}{h(x)} = \frac{b_zx^z+\dots+b_1x+b_0}{a_nx^n+\dots+a_1x+a_0}$
+    \end{itemize}
+    
+\end{definition}
+
+\begin{definition}
+
+    Eine Gerade mit der Gleichung $ y=ax+b$ heißt \textbf{Asymptote des Graphen} $G_f$ der Funktion, wenn \[\lim_{x\to-\infty}[f(x)-(ax+b)]=0\] 
+    \begin{center} oder \end{center}
+    \[\lim_{x\to+\infty}[f(x)-(ax+b)]=0\]
+
+    
+\end{definition} 
+
+\begin{definition}
+
+    Das \textbf{Verhalten einer gebrochenenrationale Funktion} für $x\to \pm\infty$ wird vom \textbf{Grad n des Nennerpolynoms} $h(x)$ und vom \textbf{Grad z des Zählerpolynoms} $g(x)$ bestimmt. Für $x\to\pm\infty$ gilt:
+    \begin{enumerate}[a)]
+    \item $z<n \,:\: f(x) \to 0 \;( \;\lim_{x\to\pm\infty}f(x) = 0);\; y=0$ (x-Achse) ist waagerechte Asymptote (w.A.)
+    \item $z = n \, : \: f(x) \to \frac {b_z}{a_n} = c \; ( \; \lim_{x\to\pm\infty} f(x) = \frac {b_z}{a_n});\;y=c$ ist w.A.
+    \item $z>n \,:\: f(x) \to -\infty \text{ oder } f(x) \to +\infty; $ keine w.A.; ein $\lim_{x\to\infty}$ bzw. $\lim_{x_to-\infty}$ existiert nicht.
+    \end{enumerate}
+
+\end{definition}
+
+
+\[f(x) = \frac{5x}{x^2-x} \; z=1, \ n=2 \; z < n\]
+\[ y=0 \]
+\begin{center} ist w.A.\end{center}
+\[\frac{x^2\frac5x}{x^2(a-\frac1x)} = \frac{\frac5x}{1-\frac1x} \; x \not = 0\]
+\[f(x) = \frac {-2x^2-1}{5x^2+2} \; z = 2\ n= 2\; z=n\]
+\[b_2 = -2, \; a_2 = 5 \Rightarrow y = \frac {b_2}{a_2} = -\frac 52 \; \text{ist w.A.}\]
+\[\frac{x^2(-2-\frac 1 {x^2})}{x^2(5+\frac2{x^2})} = \frac {-2-\frac 1{x^2}}{5+\frac2{x^2}} \Rightarrow\lim_{x\to\pm\infty}f(x) = -\frac 25\]
+\[f(x) = \frac{x^2-2}{2x-1} \;z=2\ n=1\; z>n\]
+\[\frac{x^2(1-\frac 1x)}{x^2(\frac 2x-\frac 1{x^2})} = \frac{a-\frac 1x}{\frac 2x \frac1{x^2}} \Rightarrow f(x) \to \pm \infty \text{für} x \to \pm \infty \Rightarrow \text{ keine w.A.}\]
+
+\end{document}

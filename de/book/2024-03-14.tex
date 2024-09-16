@@ -1,0 +1,52 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+    Eine Funktion $f(x) = a_n x^4 + a_{n-1} x^{n-1} + \dots + a_1 x+a_0 \; (a_n \not = 0 , n \in \mathbb{N}_0)$
+    deren Funktionsterm ein Polynom ist oder auf diese Form gebracht werden kann, heißt \underline{ganzrationale Funktion
+    von Grad n}. Das Schaubild heißt für $n \geq 2 $ \underline{Parabel n-ter Ordnung}
+\end{definition}
+
+\[f(x) = 2 (x+1)(x-2)(3-x) = -2(x^2-x-2)(x-3) = -2 (x^3 - 3 x^2 -x^2 +3x - 2x +6) = -2x^3 + 8x^2 -2x -12\]
+$\Rightarrow$ es ist eine ganzrationale Funktion
+
+\begin{definition}
+    Eine Zahl $ x\in D_f$ heißt \underline{Nullstelle der Funktion f}, wenn gilt \underline{f(x) = 0}.
+    Das Schaubild $G_f$ schneidet die x-Achse im $N(x|0)$
+\end{definition}
+
+
+\begin{definition}
+Sei f eine ganzrationale Funktion vom Grad n und $x_1$ eine Nullstelle von $f$, dann gibt es eine ganzrationale Funktion g von Grad n-1 mit $f(x) = (x-x_1) \cdot g(x)$
+\end{definition}
+\begin{definition}
+Eine ganzrationale Funktion f von Grade n hat höhstens n Nullstellen
+\end{definition}
+
+\begin{definition}
+    Eine ganzrationale Funktion von Grad n hat höhstens n-1 Extremstellen.
+    Weil Ableitung eine ganzrationale Funktion den Grad um 1 vermindet.
+\end{definition}
+\begin{definition}
+    Eine ganzrationale Funktion von Grad n hat höhstens n-2 Wendestelln
+    Weil zweite Ableitung eine ganzrationale Funktion den Grad um 2 vermindet.
+\end{definition}
+
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+\[l(x) = (x-1)^k \cdot (x-4)^m\]
+$ k oder m \in \mathbb{N} gerade \rightarrow Extremstelle$
+$ k oder m \in \mathbb{N} ungerade \rightarrow Sattlestelle$
+\end{definition}
+
+\end{document}

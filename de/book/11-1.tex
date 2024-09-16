@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{pgfplots}
+\newtheorem{definition}{Definition}
+
+\title{Integralen}
+\begin{document}
+
+\section{Rekonstruieren einer größe}
+
+\subsection{Beispiel1: Darstellung als Tabelle}
+
+\begin{center}
+\begin{tabular}{ | c || c | c | c | }
+\hline
+Intervall & [0;10] & [10;15] & [15;20] \\
+\hline \hline
+Flächeinhalt & 300FE & 0FE & 100FE\\
+\hline
+Wegänderung & 300m & 0m & -100m\\
+\hline
+orientierte Flächeinhalt  & 300FE & 0FE & -100FE\\
+\hline
+zurückgelegte Strecke & 300m &  0m & 100m\\
+\hline
+Ortspunkt von Start & 300m &  300m & 200m\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Beispiel2: Darstellung als Tabelle}
+
+\begin{center}
+\begin{tabular}{ | c || c | c | c | c | c | c | }
+
+\hline
+Intervall & [0;3] & [3;5] & [5;6] & [6;7] & [7;8] & [8;9] \\
+\hline \hline
+Flächeinhalt & 30FE & 40FE & 10FE & 0FE & 5FE & 10FE\\
+\hline
+Wegänderung & 30m & 40m & 10m & 0m & -5m & -10m\\
+\hline
+orientierte Flächeinhalt  & 30FE & 40FE & 10FE & 0FE & -5FE & -10FE\\
+\hline
+zurückgelegte Strecke & 30m & 40m & 10m & 0m & 5m & 10m\\
+\hline
+Ortspunkt von Start & 30m & 70m & 80m & 80m & 75m & 65m \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definition}Ist der Graph einer momentans Änderungrate einer Größe gegeben, so gibt der \underline{Flächeinhalt zwischen dem Graphen un der x-Achse der Gesamt Änderung} der Größe an (unter der x-Achse: negative Änderung)
+Mithilfe des Anfangswerts lassen sich \underline{die Werte der Gröse rekonstruieren}.
+\end{definition}
+Bemerkung:
+Wird der Flächeinhalt zwischen einem Graphen und der x-Achse \underline{oberhalb der x-Achse positiv und unterhalb negativ gezält}, so spricht man von  einem orientierten Flächeinhalt.
+\\
+\\
+Beispiele:
+\begin{center}
+\begin{tabular}{ c | c }
+momentane Anderungsrate & Grose als Flacheinhalt \\
+\hline \hline
+Geschwindigkeit ( $\frac ms$) & Strecke (m) \\
+Durchflussmenge ($\frac {m^3}s$) & Volumen ($m^3$) \\
+Verkaufszahlen ($\frac 1s$) & absolute Verkaufszahl\\
+Beschleunigung ($\frac m{s^2}$) & Geschwindigkeit ($\frac ms$)\\
+Temperaturänderung ($\frac K {km}$) & Temperatur (Kelvin) \\
+\end{tabular}
+\end{center}
+
+
+\end{document}

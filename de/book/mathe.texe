@@ -1,0 +1,62 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+        highlight math style= {enhanced, %<-- needed for the ’remember’ options
+            colframe=red,colback=red!10!white,boxsep=0pt}
+        }
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\title{Mathe Deutsch}
+\author{Jakub Svatuška \thanks{Herr Joost}}
+\date{September 2023 - Juni 2024}
+
+\usepackage{subfiles}
+\begin{document}
+
+\maketitle
+
+\subfile{9_bis_11-11}
+\subfile{11-12}
+\subfile{13-12}
+\subfile{14-12}
+\subfile{21-12}
+\subfile{24-12}
+\subfile{11-1}
+\subfile{18-1}
+\subfile{22-1}
+\subfile{1-2}
+\subfile{5-2}
+\subfile{21-2}
+\subfile{22-2}
+\subfile{2024-02-26}
+\subfile{2024-03-06}
+\subfile{2024-03-07}
+\subfile{2024-03-13}
+\subfile{2024-03-14}
+\subfile{2024-03-18}
+\subfile{2024-03-20}
+\subfile{2024-04-11}
+\subfile{2024-04-15}
+\subfile{2024-04-17}
+\subfile{2024-04-22}
+
+
+\end{document}

@@ -1,0 +1,91 @@
+\documentclass{book}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+    $G_k$ ist punktsymetrisch g.d.w. alle Exponenten ungerade sind
+\end{definition}
+
+\begin{definition}
+    Seien f eine ganzrationale Funktion mit $f(x) = (x-a)^k \cdot g(x)$ und g eine ganzrationale Funktion mit $g(a) \not = 0$ 
+    und $k \in \mathbb{N} \ {0}$, dann gilt:
+    \begin{itemize}
+        \item \underline{k = 1}: $G_f$ schneidet die x-Achse an x=a
+        \item \underline{k gerade}: $G_f$ hat für $x=a$ eine Exremstelle auf der x-Achse
+        \item \underline{k underade} ($k \not = 1$): $G_f $ hat für x = a eine Sattelstelle auf der x-Achse
+    \end{itemize}
+\end{definition}
+
+\chapter {Lösen von Gleichungen}
+
+\section{Strategien}
+
+\begin{enumerate}[a)]
+    \item Quadratische Gleichunge $ax^2+bx+c=0$ 
+        Lösungsformel: 
+        \begin{itemize}
+            \item \[x_{1, 2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+            \item \[x_{1, 2} = -\frac p 2 \pm \sqrt{(\frac p 2 )^2-q}\]
+        \end{itemize}
+    \item Produkt $ p(x) \cdot q(x) = 0$ 
+        Satz von Nullprodukt: $ p(x) = 0$ oder $q(x) = 0$
+    \item Jeder Summant enthält x $ ax^3 + bx^2+cx = 0$
+        Ausklammern: $ x\cdot (ax^2+bx+c)=0$
+    \item Gleichungen, die durch Substitution gelöst werden können 
+        \begin{multicols}{2}
+            \[ a\cdot e^{2x} +b \cdot e^x +c = 0\]
+            \[ax^4 + bx^2 +c = 0\]
+            \[a(sin(x))^2 + b\cdot sin(x) + c = 0\]
+
+            \columnbreak
+            \begin{equation*}
+                \begin{rcases}
+                    \begin{array}{c}
+                        z=e^x \\
+                        z = x^2 \\
+                        z = sin(x)
+                    \end{array} 
+                \end{rcases}
+                \text{Entries}
+            \end{equation*}
+        \end{multicols}
+
+\end{enumerate}
+
+\chapter {Die Sinus und Kosinus Funktion}
+
+\begin{definition}
+    Die eindeutige Zuordnung, die jeder reelen Zahl $x\in\mathbb{R}$ (im Bogenmaß) ($D_f = D_g = \mathbb{R}$) den Wert
+    \begin{itemize}
+        \item sin x zuordnet heißt Sinusfunktion, $f(x)=sin x$
+        \item cos x zuordnet heißt Kosinusfunktion $g(x) = cos x$
+    \end{itemize}
+    f und g gehören ze den trigonometrischen Funktionen
+\end{definition}
+
+\section{Amplitude und Periode der Sinusfunktion}
+\begin{enumerate}
+    \item $f(x) = sin (x)$ hat die Periode $p = 2 \pi$
+    \item $g(x) = cos (x)$ hat die Periode $p = \pi$
+    \item $h(x) = sin (bx)$ hat die Periode $p = \frac {2\pi}b$
+\end{enumerate}
+
+\end{document}

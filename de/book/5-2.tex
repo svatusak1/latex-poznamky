@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\newtheorem{definition}{Definition}
+\begin{document}
+
+\section{Stammfunktionen und ihre graphen}
+
+\[f(a) = F'(a) = 0\]
+\[f' = F''\]  
+
+\[f(x) < 0 \text{ an } I \Rightarrow F(x) \text{ an } I \text{ s.m.f. }\]
+\[f(x) > 0 \text{ an } I \Rightarrow F(x) \text{ an } I \text{ s.m.w. }\]
+
+\[f'(b) = F''(b) \text{ Extremstelle ist die Wendestelle der Stammfunktion}\]
+
+
+\begin{definition}
+Eigenschaften von Stammfunktionen
+\begin{enumerate}[(1)] 
+
+\item $J_u'(X) = f(x) $ $ J_u$ ist Stammfunktion von f mit die untere Grenze u
+\item $ J_u(u) = \int_u^u f(t) dt = 0$
+\item $J_u(x) = F(x) - F(u) = F(x) - c$
+\end{enumerate}
+\end{definition}
+
+\center{\underline{Beweis}:}
+\\
+\raggedright
+Vor.:$J_u(x) $ ist differenzierbar; $J_u(x) = \int_u^xf(t)dt = F(x) -F(u)$
+\\
+Beh.: $ J_u'(x) = f(x)$
+
+Beweis:
+\[J_u'(x) = [\int_u^xf(t)dt]' = [F(x) - F(u)]' = F'(x) - F'(u) = f(x) - f(u) = f(x) -  0 = f(x)\]
+q.e.d.
+
+
+\begin{definition}
+
+$F(x) = ln(x) $ ist die Stammfunktion von $ f(x) = \frac 1x \; (x \not=0)$
+
+\end{definition}
+
+Beispiele:
+\begin{enumerate}[i)]
+\item \[f(x) = \frac1{2x+1}\]\[ F(x) = \ln(2x+1) \frac 12\]
+
+\item \[\int_{\frac12}^{\frac12 e} \frac5{-2x}dx =  [-\frac52\ln(2x)]_{\frac12}^{\frac12 e} = -\frac52\ln(2\frac12e) + \frac52\ln(2\frac12) = -\frac 52\]
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,104 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+        highlight math style= {enhanced, %<-- needed for the ’remember’ options
+            colframe=red,colback=red!10!white,boxsep=0pt}
+        }
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}[Zusammenfassung von Sinus und Cosinus Funktion]
+    
+    \begin{displaymath}
+        G_{sin} \to G_{cos}: \text{Verschiebung um } -\frac {\pi}{2}LE 
+    \end{displaymath}
+    
+\end{definition}
+
+\section{Funktionsanpassung mit trigonometrischen Funktionen}
+    anpassung 
+    \section{Trigonometrische Gleichungen}
+    Es gilt:
+    \begin{enumerate}[a)]
+        \item Werte den Sinusfunktion und Kosinusfunktion
+            \begin{table}[h!]
+                \begin{tabular}{c||*{5}{c|}}
+                    x & 0 & $\frac {\pi}6$ &$\frac {\pi}4$ &$\frac {\pi}3$ &$\frac {\pi}2$ \\
+                    \midrule
+                    $\sin x$ & 0 & $\frac 12$ & $\frac{\sqrt{2}}2$ & $\frac{\sqrt{3}}2$ & 1 \\
+                    $\cos x$ & 1 & $\frac{\sqrt{3}}2$ & $\frac{\sqrt{2}}2$ & $\frac 12$ & 1 \\
+
+                \end{tabular}
+            \end{table}
+        \item Alle Lösungen mit $x \in [0;2\pi]$
+            \[\sin x = \frac 12 \sqrt 2 \quad \Rightarrow x_1=\frac \pi 4 \: \text{ oder} \; x_2 = \pi - \frac \pi 4 = \frac 34 \pi\]
+            \[\cos x = -\frac {\sqrt{2}} 2 \quad \Rightarrow x_1 = \pi - \frac \pi 4 = \frac 34 \pi \; \text{oder}\; x_2 = \pi+\frac \pi 4 = \frac 54 \pi\]
+            
+        \item Wichtige Hilfsmittel für weitere Gleichungen
+            \begin{enumerate}[i)]
+                \item Substitution des Arguments
+                    \[\sin (3x) = \frac 12 \quad \]
+                    Substitution (z = 3x):
+                    \[\sin(z) = \frac 12 \quad \Rightarrow z_1 = \frac \pi 6 \; \text{oder} \; z_2 = \pi - \frac \pi 6 = \frac 56 \pi\]
+                    Rücksubstitution:
+                    \[x_1 = \frac {z_1}3 = \frac \pi {18}\]
+                    \[x_2 = \frac {z_2}3 = \frac 5{18}\pi\]
+                \item trigonometrische Hilfsmittel \\
+                    \tcboxmath{
+                        \tan x = \frac {\sin x} {\cos x} 
+                    }
+                    \tcboxmath{
+                        \sin^2 x +\cos ^2 x = 1 
+                    }
+
+                Tangensfunktion Definitionsgleichung:
+                \begin{align*}
+                    2\sin x = \tan x &\Rightarrow 2 \sin x  = \frac {\sin x }{\cos x} \\
+                                     &\Leftrightarrow 2\sin x - \frac {\sin x }{\cos x} = 0 \\
+                                     &\sin x (2 - \frac 1{\cos x} = 0 \\
+                                     & \Rightarrow \sin x = 0 \; \text{oder} \; \cos x = \frac 12 \\
+                                     &&& x_1 = 0 \\
+                                     &&& x_2 = \pi \\
+                                     &&& x_3 = \frac \pi 3 \\
+                                     &&& x_4 = \frac 35 \pi
+                \end{align*}
+
+                \item Substitution der Winkelfunktion
+                    \[\sin^2 x + \frac 32 \sin x - 1 = 0 \]
+                    Substitution z = $\sin x$: 
+                    \[z^2 \frac 32 z -1 = 0\]
+                    \[(z-\frac 12)(z+2)=0\]
+                    \[z_{1,2} = \frac 12 \; ; \; -2\]
+                    Rücksubstitution:
+                    \[\sin x = -2 \]
+                    \centering \Lightning
+                    \[\sin x = \frac 12 \]
+                    \[x_1 = \frac \pi 6 \; \text{oder} \; x_2 = \pi - \frac \pi 6 = \frac 56 \pi\]
+
+
+            \end{enumerate}
+        
+\end{enumerate}
+    
+
+
+
+\end{document}

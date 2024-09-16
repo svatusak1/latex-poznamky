@@ -1,0 +1,67 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+
+\[f_h(x) = \frac{3h-3}{(x+2)^h} \; h > 1 \; ; \; I = [0;\infty]\]
+\[A(z) = \int_0^z \frac{3h-3}{(x+2)^h} dx = [-\frac 1 {h-1}\frac{3h-3}{(x+2)^{h-1}}]_0^z \]
+\[ - \frac 1 {-h+1} \frac {3h-3}{z+2}^{h-1} - (-\frac 1{h-1} \frac {3h-3}{2^{h-1}})\]
+\[A_h = A_h(z) \lim_{z\to\infty}A_h(z)=\frac 1 {h-1} \frac {3h-3}{2^{h-1}} = 1 \]
+\[\frac {3h-3}{h-1} = 2^{h-1}\]
+\[\ln \frac{3h-3}{h-1} = (h-1)\ln(2)\]
+\[\ln 3\frac{h-1}{h-1}=(h-1)\ln(2)\]
+\[ln (3) = (h-1)\ln(2)\]
+\[h = 1+ \frac {\ln3}{\ln2}\]
+
+
+\underline{Skizzieren Sie die Graphen der folgenden Funktion:}
+\begin{enumerate}[i)]
+    \item $f(x) = (x-1)(x-4)$
+    \item $g(x) = (x-1)(x-4)^2$
+    \item $i(x) = (x-1)^2(x-4)^2$
+    \item $j(x) = (x-1)(x-4)^4$
+
+\end{enumerate}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=outer north east,
+        title=Example,
+        axis lines = center,
+        xlabel = $x$,
+        ylabel = $y$,
+        variable = t,
+        trig format plots = rad,
+        xtick distance = 1,
+        ]
+
+        \addplot [
+            samples=70,
+            color=blue,
+            ]
+            {(x-1)*(x-4)};
+        \addlegendentry{$ y=(x-1)*(x-4)$}
+    
+    \end{axis}
+\end{tikzpicture}
+
+
+Formulieren sie eine Vermutung für den Graphen def Funktion f mit $ l(x) = (x-1)^k(x-4)^m$
+
+\end{document}

@@ -1,0 +1,608 @@
+\documentclass{scrbook}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{soul}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newtheorem{definition}{Definition}
+\begin{document}
+
+\chapter{Ableitung}
+
+\section{Bestimmung der Ableitungsfunktion mit dem Quotient}
+\(
+gegeben: f_{(x)} = 4 - \frac 1 4 x^2 \qquad D_f = \mathbb{R}  \\
+\newline
+gesucht: f'_{(x)}
+\)
+
+\[m_{(h)} = \frac{f_{a+h}-f_{(a)}}h = \frac{4-\frac 1 4 (a+h)^2-(4-\frac 1 4 a^2)}h \]
+\[= \frac{4-\frac 1 4 (a^2+2 a h + h^2) - 4 + \frac 1 4 a^2}h \]
+
+\[= \frac{4-\frac {a^2} {4} - \frac {ah} {2} - \frac {h^2} {4} - 4 + \frac {a^2} 4}h \]
+
+\[= \frac {-\frac {a h} {2} - \frac {h^2} 4}h = -\frac a 2 - \frac h 4\]
+
+\[f'_{(a)} = \lim_{h\to0} m_{(h)} = \lim_{h\to0}-\frac a 2 -\frac h 4 = -\frac a 2\]
+
+\[f'_{(x)} = -\frac 1 2 x \]
+
+\section{Ableitungs Regel und höhere Ableitungen}
+\begin{definition}
+Ist f' differenzierbar, so enthält man durch Ableiten von f' der zweite Ableitung f'' usw.
+\[f''(x) = [f'(x)]'\]
+\[f^{(x)}(x) = [f^{(n-1)}(x)]'\]
+\end{definition}
+
+\begin{definition}
+Polynom von Grad n:
+\[ a_n \neq0\quad a_n, \dots, a_o \in \mathbb{R}\]
+\[a_n x^n+a_{n-a}x^{n-1}+\dots+a_1 x^1+a_0\]
+\end{definition}
+\begin{definition}
+Für verschachtelte Funktionen gilt:
+\[f(x) = u(v(x)) \quad f = u\circ v:x\quad f(x) = (u \circ v)(x) \quad \circ \text{ist nicht komutativ}\]
+\end{definition}
+
+\begin{definition}Summeregel: 
+\[f(x) = g(x) + v(x)\]
+\[ \Rightarrow f'(x) = g'(x) + v'(x)\]
+\end{definition}
+
+\begin{definition}Potenzregel: 
+\[f(x) = x^r \text{mit r} \in \mathbb{R} \text{\textbackslash} \{0\}\]
+\[ \Rightarrow f'(x) = r \cdot x^{r-1}\]
+\end{definition}
+
+\begin{definition}Faktorregel:
+\[f(x) = c \cdot g(x) \text{mit c} \in \mathbb{R}\]
+\[ \Rightarrow f'(x) = c \cdot g'(x)\]
+\end{definition}
+
+\begin{definition} Kettenregel: 
+\[ f(x) = u(v(x))\]
+\[ \Rightarrow f'(x) = u'(v(x))\cdot v'(x) \quad f' = (u' \circ v)\cdot v'\]
+\end{definition}
+
+\begin {definition} Produktregel:
+\[f(x) = g(x)\cdot v(x)\]
+\[\Rightarrow f'(x) = g'(x)\cdot v(x) + v'(x)\cdot g(x)\]
+\end{definition}
+
+\chapter{Monotonie}
+
+\begin{definition}
+\[ \forall x_1, x_2 \in I_1: x_1 < x_2 \land f(x_1) < f(x_2) \implies f(x) \text{ ist streng monoton wachsend in }I_1\]
+\[ \forall x_1, x_2 \in I_1: x_1 < x_2 \land f(x_1) > f(x_2) \implies f(x) \text{ ist streng monoton fallend in }I_1\]
+\end{definition}
+
+\subsection{Rechnerische Bestimmung der Monotomie Intervalle mit dem Monotoniesatz}
+\begin{enumerate}
+\item Bestimmung der Nullstellen der 1. Ableitung
+\item Definition der Intervalle
+\item Werte von Interval und f' entesetzen
+\end{enumerate}
+
+\subsubsection{Beispiel}
+\[f(x) = \frac 13 x^3 - 3x^2 +3x+1\]
+\[f'(x) = x^2 - 6x + 3\]
+\begin{enumerate}
+\item \[f'(x) = 0 \Rightarrow x^2 - 6x + 3 = 0\]
+\[x = 3\pm \sqrt6\]
+\item 
+\begin{itemize}
+\item $I_1 = ]-\infty;3-\sqrt6[ $
+\item $I_2 = ]3-\sqrt6; 3+\sqrt6[$
+\item $I_3 = ]3+\sqrt6; \infty[$
+\end{itemize}
+\item 
+\begin{itemize}
+\item $f'(-10) \in \mathbb{R}^+ \implies f(x) \in I_1$ ist s.t. wachsend
+\item $f'(0) \in \mathbb{R}^- \implies f(x) \in I_1$ ist s.t. fallend
+\item $f'(10) \in \mathbb{R}^+ \implies f(x) \in I_1$ ist s.t. wachsend
+\end{itemize}
+\end{enumerate}
+
+\chapter{Tangenten und Normalen Gleichungen}
+
+\begin{tikzpicture}
+\begin{axis}
+\addplot[color=black]{(x-6)*(x-5)*(x-7) + 4};
+\end{axis}
+\end{tikzpicture}
+
+\[t: y = m_t x + c\]
+\[m_t = f'(u) \quad x = u \quad y = f(u)\]
+\[f(u) = f'(u) \cdot u+c\]
+\[ c = f(u) - f'(u) \cdot u \]
+\[y_t = f'(u) x + f(u) - f'(u)\cdot u \]
+\[\mathcolorbox {red} {y_t = f(u)(x-u) + f(u)}\]
+\[t \perp n \Leftrightarrow m_n \cdot m_t = -1\; ; \; m_n = \frac{-1}{m_t}\]
+\[\mathcolorbox {cyan} {y_n = -\frac1{f'(u)}(x-u)+f(u)}\]
+
+\subsection{Bestimmung dei Tangentegliechung durch eine aüßere Punkt}
+geg: $f(x) = \frac12 x^3 \; ; \; C = [0; -1]$
+
+\[f(x) = \frac32 x^2\]
+\[y_t = f'(u)(x-u) + f(u)\]
+\center{C einsetzen}
+\[-1 = \frac32 u^2(0-u)+\frac12 u^3\]
+\[-1 = -\frac32 u^3+\frac12 u^3\]
+\[-1 = -u^3\]
+\[u = 1 \Rightarrow \text{Berührpunkt} = B[1;f(1)]\]
+
+\begin{equation*}
+\begin{aligned}
+t: y &= f'(u)(x-u)+f(u)
+\\
+&=\frac32 1^2(x-1)+\frac12 1^3
+\\
+&=\frac32 x - \frac 32 + \frac12
+\\
+&=\frac32 x -1
+\\
+n: y &= -\frac1{f'(u)}(x-u)+f(u)
+\\
+&=-\frac23 1^2(x-1) +\frac12 1^3
+\\
+& = -\frac23 x +\frac23 + \frac12
+\\
+&= -\frac23 x + \frac 76
+\end{aligned}
+\end{equation*}   
+
+
+
+\chapter{Krummung}
+
+\section{Wendestellen}
+
+\begin{definition}
+Gegeben ist eine auff einem Intervall I definierte Funktion f, die dort zweimal differenzierbar ist. Ist $x_0$ eine inner Stelle von I, so gilt:
+
+\end{definition}
+
+\chapter{Nebenbedingungen}
+
+Anwendungssituationen in denen eine Größe von zwei Variablen, die miteinander einen Zusammenhang haben, abhängt.
+
+\section{Methoden für lösen die Nebnbedingungenprobleme}
+\begin{multicols}{2}
+
+\begin{enumerate}
+\item Formel für die Größe aufstellen, die extremal werden soll.
+\item Zusamenhang zwischen den beiden Variblen beschreiben (\textbf{Nebenbedingungen})
+\item \textbf{Zielfunktion} bestimmen durch Einsetzen in die Ausgangsformel
+\item \textbf{Definitionsmenge} festlegen
+\item Untersuchen der Zielfunktion auf \textbf{Extremwerte}
+\item Ränder der Definitionsmenge untersuchen
+\item Ergebnis formulieren
+\end{enumerate}
+
+\columnbreak
+\begin{enumerate}
+\item $A= u \cdot v$
+\\
+$v = f(u) = -0,8u + 4,8$
+\item v hängt von u ab
+\item $A(u) = u \cdot f(u) = -0,8u^2 + 4,8u$
+\item $u \in [0;6]$
+\item $A'(u) = 0 \rightarrow -0,8u^2 + 4,8u = 0$ liefert u = 3
+\\
+$A''(u) = -1,6 < 0$ für alle u
+\\
+Stelle des lokales Maximum: $u = 3$
+\item $A(0) = 0$ und $A(6) = 0$
+\item Für $u = 3$ wird der Flächeinhalt des Rechtecks am größten: $A(3) = 7,2$
+\end{enumerate}
+
+\end{multicols}
+
+\subsection{Abstandformel}
+Abstand zweir Punkte $P(x_p\vert y_p)$ und $Q(x_q\vert y_q)$ im Koordinatensystem
+\[d = d(Q, P) = \overline{QP} = \sqrt{(x_p - x_q)^2 + (y_p - y_q)^2}\]
+\chapter{Exponential und Logarithmus funktionen}
+
+\begin{definition}
+Eine Funktion $f$ mit $f_{(x)} = c \cdot b^x,\, b> 0, \,b \neq 1, \,c \in \mathbb{R}$ heißt \textbf{Exponentialfunktion mit Basis b.}
+\end{definition}
+
+\begin{definition}
+Ist $ b^x = y$ mit $y>0$ und $b>0$ sowie $ b \not = 1$, so nennt man den Exponent x den \b Logarithmus von y zur Basis b.\b
+Man schreibt: $x = log_b(y)$
+\end{definition}
+
+\section{Euler-Zahle}
+
+\subsection{Die natürliche Exponentialfunktion und ihre Ableitung, die Euler-Zahle}
+
+\underline{Vermutung: }
+\begin{itemize}
+\item Für Exponentielfunktion mit $f_{(x)} = b^x (b > 0, b \neq 1)$ gilt: 
+\end{itemize}
+\[\frac{f'_{(x)}}{f_{(x)}} = k \quad (k \in \mathbb{R}) \Rightarrow \]
+\[f'_{(x)} = k \cdot f_{(x)}\]
+\[f'_{(x)} \approx f_{(x)}\]
+
+
+\begin{definition}
+Sei e $\approx 2, 7182818284$ die Eulersche Zahle, dann heißt die Funtion mit $f_{(x)} = e^x$ \textbf{natürliche Exponentialfunktion}
+\end{definition}
+
+Zusatz: Die Ableitung stimmt mit der Funktion überein $f'_{(x)} = e^x$
+
+
+\begin{definition}
+Für alle $ y > 0$ gilt: $e^{ln(y)} = y$
+Für alle $ x \in \mathbb{R} $ gilt: $ ln (e^x) = x$
+\end{definition}
+
+Der Logarithmus zur Basis e heißt \textbf{ natürliches Logarithmus}
+\[log_e = ln\]
+Bemerkung: $ ln(e) = 1\; ; \; ln(1) = 0$
+
+\begin{definition}
+
+Die Zahl $ x = ln (b)$ löst die \textbf{Exponentialgleichung $ e^x = b \;(b > 0)$}
+\end{definition}
+\[ \Rightarrow e^x = 5 \Rightarrow x = ln (5) \Rightarrow 5 = ln (e^5)\]
+
+
+\subsection{Die Ableitung von $f_{(x)} = e^x$}
+\underline{Beispiel}:
+
+\[f_{(x)} = 3 \cdot e ^{5x + 1} = u(v(x)) \]
+\[u_{(x)} = 3e^x \rightarrow u'_{(x)} = 3e^x\]
+\[v_{(x)} = 5x+1 \rightarrow v'_{(x)} = 5\]
+\[f'_{(x)} = u'(v_{(x)})\cdot v'_{(x)}\]
+\[f'_{(x)}= e^{5x+1} \cdot 5 = 15 e^{5x+1}\]
+
+\begin{definition}
+Sei $f_{(x)} = e^{v_{(x)}} \Rightarrow f'_{(x)} = e^{v_{(x)} }\cdot v'(x)$
+
+Die weiteren Ableitungsregeln gelten ebenso!
+\end{definition}
+
+\subsection{Eigenschaften von $f(x) = e^x $ und des Graphen von $f(x) = e^x$}
+\begin {itemize}
+\item Der Graph $G_t$ geht durch P(0|) ; f(0) = 1
+\item Der Graph liegt immer über die x-Achse
+\item Die x-Achse ist waagrechte Asymptote $f(x) \rightarrow 0$ für $x \rightarrow -\infty$
+\item $f(x) \rightarrow + \infty \; ; \; x \rightarrow + \infty$
+\item f ist auf $\mathbb{R}$ streng monoton wachsend
+\item $G_f$ hat keine Extrem und Wendepunkte 
+\[ \Rightarrow f'(x) \not = 0 \; ; \; f'' (x) \not = 0\]
+\item $G_f$ ist Linksgekrümmt
+\end{itemize}
+
+
+
+\subsection{Darstellung der Euler Zahle}
+
+Für $f(x) = e^x$ folgt aus : 
+\[f'(0) = e^0 = 1\]
+\[f'(x) = f(a) \cdot 1 \]
+also:
+\[f'(0) = \lim_{h\rightarrow0}\frac {e^h -1}h = 1\]
+
+$\Rightarrow$ Wenn h sehr nahe bei 0 ist gilt:
+\[\frac{e^h - 1}h \approx 1 \]
+\[e^h-1 \approx h\]
+\[ \Leftrightarrow e^h = h+1 \quad | \sqrt[h]{}\]
+\[ e = (h+1)^{\frac1h}\]
+
+Sei $n = \frac 1 h $ oder $h = \frac 1 n$
+\[ \Rightarrow e  (1+ \frac 1 n )^n\]
+für h $\rightarrow 0 $ geht $ n \rightarrow \infty4$
+\[ \Rightarrow lim_{h \rightarrow \infty}(1+\frac 1 n )^n) = e\]
+
+\[n = 10: (1+ \frac 1 {10} )^{10} \approx 2,59374246\]
+\[n = 100: (1+ \frac 1 {100} )^{100} \approx 2,704813829\]
+\[n = 1000: (1+ \frac 1 {1000} )^{1000} \approx 2,716923\]
+\[n = 10000: (1+ \frac 1 {10000} )^{10000} \approx 2,718145927\]
+\[n = 100000: (1+ \frac 1 {100000} )^{100000} \approx 2,718268237\]
+
+\begin{definition}
+\begin{itemize}
+\item $f'(x) = f(x) $ oder $ \frac {f'(x) }{f(x)} = 1$
+\item $f'(0) = 1$
+\item $ \lim_{h\rightarrow0}\frac{e^h - 1}h = 1$
+\item$\lim_{n\rightarrow \infty }(1+ \frac1 n )^n = e$
+\end{itemize}
+\end{definition}
+
+
+\subsection{Lösen von natürlichen Exponentialgleichungen}
+\begin{enumerate}
+\item {Einfache Exponentialgleichungen: 
+\[e^x = 5\]
+\[ \Rightarrow ln(e^x) = ln(5)\]
+\[ \Rightarrow x = ln(5) \approx 1,609\]
+}
+
+\item {Exponentialgleichungen, bei denen man ausklammern und den Satz von Nullpunkt anwenden kann:
+\[x \cdot e^x + 3e^x = 0 \Rightarrow e^x \cdot(x+3) = 0\]
+\begin{itemize}
+\item Fall: $e^x = 0$: es existiert kein x
+\item Fall: $ x + 3 = 0 \cdot x = -3$
+\end{itemize}
+Die Gleichung hat die Lösungmenge $\mathbb{L} = \{-3\}$
+}
+
+\item{Exponentialgleichungen, die sich durch Substitution lösen lassen:
+\[e^{2x} - 5e^x+6 = 0\]
+Ersetzen Sie $e^x$ durch u (Substitution) und lösen Sie die neu entstandene Gleichung:
+\[e^x = u \Rightarrow u^2 = - 5u + 6 = 0 \Rightarrow u_1 = 3 \text{ oder } u_2 = 2\]
+Ersetzen Sie u wieder durch $e^x$ (Rücksubstitution) und lösen Sie die neu entstanden Gleichung:
+\[u = e^x \Rightarrow \]
+\[ 3 = u_1 = e^{x_1} \Rightarrow x_1 = ln(3)\]
+\[2 = u_2 = e^{x_2} \Rightarrow x_2 = ln(2)\]
+Lösungsmenge: $\mathbb{L} = \{ln(2), ln(3)\}$
+}
+\end{enumerate}
+
+Beispiel:
+
+\[ \ln(5x^2) = 4 \ln(\sqrt x)+3 \quad \vert e^{()}\]
+\[e^{ \ln(5x^2) } = e^ {4 \ln(\sqrt x)+3 }\]
+\[5x^2 = e^3\cdot e^{4 \ln(\sqrt x)}\]
+\[5x^2 = e^3\cdot e^{4 \ln(\sqrt x)}\]
+\[5x^2 = e^3 \cdot e^{\ln(x^{\frac 42})}\]
+\[5x^2 = x^2 \cdot e^3\]
+\[x^2(5-e^3) = 0\]
+\[\mathbb{L} = \{\} \text{ weil }x > 0 \text{ (Logarithmus is nur in } \mathbb{R}^+ \text{definiert})\]
+
+
+
+\section{Exponentialfunktionen belibiger Basis}
+
+\subsection{Anwendungen Vereinfachen von Termen}
+
+\begin {enumerate}
+\item $ e^{3ln(2)} = e ^{ln(2)^3} = 2^3 = 8$
+\item $ln(\sqrt e ^3) = 3 ln(\sqrt e) = 3 \cdot 0,5 \cdot ln(e) = 1,5$ 
+\item $ln(\frac 1 3 \sqrt e) = ln(\frac 1 3 ) + ln(\sqrt e) = ln(\frac 1 3 ) + 0,5 \cdot ln(e) = ln(1) - ln(3) + 0,5 $
+
+\end{enumerate}
+
+
+
+
+\subsection{Differenzierbarkeit von $f(x) = b^x$ auf der Stelle a}
+
+Differenzquotient:
+\begin{equation*}
+\begin{aligned}
+m(h) &= \frac {f(a+h) - f(h)}{h}
+\\
+&= \frac {b^{a+h}-b^a}{h} = \frac {b^a b^h - b^a}h
+\\
+&= \frac{b^a(b^h - 1)}h = b^a \cdot \frac {b^h - 1}h
+\end{aligned}
+\end{equation*}
+
+\[m(h) = f(a) \cdot m_0(h)\]
+\[m_0 = \text{Differenzquotient an der Stelle } 0\]
+
+
+$\Rightarrow$ existierter Grenzwert $\lim_{h\rightarrow 0}\frac{h^h-1}h$, dann ist 
+\[\lim_{h \rightarrow 0}m(h) = f(a) \cdot f'(0), \, f'(0) = \lim_{h \rightarrow0} \frac {b^h - 1}h\]
+
+\begin{definition}
+Für $f(x) = b^x \quad (b > 0 ; b \not = 1)$ gilt:
+\begin {itemize}
+\item f ist unendlich oft differenzierbar
+\item $f'(a) =f(a) \cdot f'(0) $ oder $\frac {f'(a)}{f(a)} = f'(0) = h \quad h \in \mathbb{R}$
+\end{itemize}
+
+Für $f'(x)$ mit $f(x) = b^x$ gibt es keinen festen Term!
+\end{definition}
+
+
+\subsection{Umschreiben von Potenzen}
+
+\[ a^b = e^{ln(a)^b} = e^{b \cdot ln(a)} = (e^{ln(a)})^b\]
+$\Rightarrow$ Jede Potenz zu einer beliebigen Basis $a > 0$, laßt sich als Potenz zur Basis e schreiben!
+\[ \mathcolorbox{yellow}{f(x) = 2^x = e^{ln(2^x)} = e^{x\cdot ln(2)} \quad f'(x) = e^{x \cdot ln(2)} \cdot ln(2)}\]
+
+\subsection{Lösen von Exponentialgelichungen beleibiger Basis}
+\begin{enumerate}
+\item 
+\[ 2^{\sqrt{x-1}}  = 3 \quad \vert \ln \text{ (Potenz schon isoliert)}\]
+\[ln( 2^{\sqrt{x-1}}) = ln(3)\]
+\[\sqrt{x-1}ln(2) = ln(3)\]
+\[\sqrt{x-1} = \frac{ln(3)}{ln(2)}\]
+\[x = (\frac{ln(3)}{ln(2)})^2 + 1\]
+
+\item
+\[4 \cdot  7^{2x-5} = 30 \quad \vert \text{Potenz isolieren}\]
+\[7^{2x-5} = \frac {15}2 \quad \vert \ln \]
+\[ln(7^{2x-5} ) = ln(\frac{15}2)\]
+\[(2x-5)\cdot ln(7) = ln(7,5)\]
+\[2x-5 = \frac{ln(7,5)}{ln(7)}\]
+\[x = \frac{ln(7,5)}{ln(7)\cdot 2} + \frac 52\]
+
+\item
+\[2 ^{\sqrt{x-1}} = 3\]
+\[2^{\sqrt{x-1}} = 2^{log_2(3)}\]
+\[x-1 = log_2(3)^2\]
+\[x = log_2(3)^2-1\]
+\item
+\[12+5^x = 25^x\]
+\[12 = 25^x-5^x\]
+\[12 = 5^{2^x} - 5^x\]
+\[12 = 5^{x^2} - 5^x \quad \vert u = 5^x\]
+\[u^2 - u - 12 = 0\]
+\[(u-4)(u+3) = 0\]
+\[5^x = 4 \rightarrow x = \log_5(4)\]
+\[5^x = -3 \rightarrow \Lightning\]
+\[ \mathbb{L} = \{ \frac{\ln(4)} {\ln(5)} \} \]
+
+\end{enumerate}
+
+
+\chapter{Verhalten für $x \rightarrow \pm \infty$}
+
+\begin{definition}
+
+Für die Funktionen der Form
+\[f(x) = x^n\cdot e^{ax}\]
+oder 
+\[f(x) = x^n \cdot e^{-ax}\] mit $a>0$ gilt:
+
+\[x^n \cdot e^{ax}\]
+\begin{itemize}
+\item 0 $\quad x\rightarrow \infty$ 
+\item $+\infty \quad x \rightarrow + \infty$
+\end{itemize}
+
+\[ \frac{x^n}{e^ax} = x^n \cdot e^{-ax}\]
+\begin{itemize}
+\item $+\infty \quad x \rightarrow - \infty$ n gerade
+\item $0 \quad x \rightarrow + \infty$
+
+\end{itemize}
+
+\[ \frac{x^n}{e^ax} = x^n \cdot e^{-ax}\]
+\begin{itemize}
+\item $-\infty \quad x \rightarrow - \infty$ n ungerade
+\item $0 \quad x \rightarrow + \infty$
+\end{itemize}
+
+\[e^{ax} - x^n\]
+\begin{itemize}
+\item $-\infty \quad x \rightarrow + \infty$ n ungerade
+\item $-\infty \quad x \rightarrow - \infty$ n gerade
+\item $+ \infty \quad x \rightarrow + \infty$
+\end{itemize}
+
+Der Satz gilt auch wenn $x^n$ durch ein Polynom $p(x)$ von grad n ersetzt
+
+\end{definition}
+
+\begin{definition}
+Eine Gerade mit der Gleichung $ y = c$ heißt
+\underline{waagenrechte Asymptote des Schaubildes von $f$, wenn gilt:} 
+\[ \lim_{x \to \infty} [ f(x) - d] = 0\]
+bzw. $f(x) \rightarrow d$  für $x\rightarrow + \infty$
+(analog für  $x \rightarrow - \infty$)
+\end{definition}
+
+\underline{Beispiel:}
+\[f(x) = e^x + 2\]
+\[\lim x {-\infty} [f(x) - 2] = \lim_{x \to - \infty} e^x = 0\]
+oder $e^x + 2 \rightarrow 2 $ für $ x \rightarrow - \infty $ weil $e^x \rightarrow 0 $ für $ x \rightarrow - \infty$
+$ \Rightarrow y = 2 $ ist Waagenrechte Asymptote
+
+\begin{definition}
+Gegeben ist eine Funktion f mit dem Definitionsbereich $D_f$. Wenn für alle $x \in D_f$ gilt, so ist der Graph von f
+\[f(-x) = f(x) \; \Rightarrow \text{achsensymmetrisch zur y-Achse}\]
+
+\[ f(-x) = -f(x) \; \Rightarrow \text{punktsymmetrisch zum Ursprung}\]
+
+\end{definition}
+
+\underline{Wiederholung: }
+Symetrisch bei generationalen Funktionen
+\[f(x) = a_n \cdot x^n + \dots +a_1 \cdot x + a_0\]
+
+\underline{Achsensymmetrie zur y=Achse $\Leftrightarrow$ alle Hochzahlen sinf gerade}
+z.B. \[f(x) = x^4 + 4x^2 + 7\]
+
+\underline{Punktsymetrie zur Ursprung $ \Leftrightarrow $ alle Hochzahlen sind ungerade}
+z.B. \[f(x) = -7x^5 - 3x^3 + x\]
+
+\chapter{Überprüfen von Symetrie}
+
+\begin{enumerate}
+\item
+\[f(x) = x^2\]
+\[f(-x) = (-x)^2 = x^2 = f(x)\]
+$\Rightarrow$ y-Achsensymetrisch
+
+\item
+\[ g(x) = x^3\]
+\[g(-x) = (-x)^3 = -x^3 = -g(x)\]
+$ \Rightarrow$ Punktsymetrisch zum Ursprung
+\item
+\[h(x) = \frac{x} {x^3 + x}\]
+\[h(-x) = \frac{-x}{(-x)^3+(-x)} = \frac{-x}{-x^3-x} = \frac{-x}{-(x^3+x)} = \frac x {x^3+x} = h(x)\]
+\[-h(x) = -\frac{x} {x^3 + x}\]
+$\Rightarrow$ y-Achsesymmetrisch
+
+\item
+\[i(x) = x^3 \cdot e^{x^2}\]
+\[i(-x) = (-x)^3 \cdot e^{(-x)^2} = -x^3 \cdot e^{x^2} = -i(x)\]
+$\Rightarrow$ Punktsymetrisch zum Ursprung
+
+\item
+\[ j(x) = e^x + x^2\]
+\[j(-x) = e^{-x} + (-x)^2 = e^{-x} + x^2\]
+\[-j(x) = -( e^x + x^2) = -e^x - x^2\]
+\[j(x) \not = j(-x) \land j(-x) \not = -j(x)\]
+$\Rightarrow$ keine Symmetrie
+
+\end{enumerate}
+
+\chapter{Untersuchung auf Eigenschaften}
+\begin{enumerate}
+\item Nullstellen
+\item Extremstellen / Monotonie
+\item Wendestellen / Krümmung
+\item Symmetrie
+\item Asymptoten
+\end{enumerate}
+
+\underline{Beispiel:}
+\[f(x) = x^4 \cdot e^x\]
+Nullstellen:
+\[x^4 = 0 \quad e^x = 0\]
+\[ \mathbb{L} = \{0\}\]
+Extremstellen:
+\[f'(x) = 0 = 4x^3\cdot e^x + x^4 \cdot e^x = x^3\cdot e^x(4 + x)\]
+\[f''(x) = 12x^2 \cdot e^x + 4x^3 \cdot e^x + 4x^3\cdot e^x + x^4 \cdot e^x\]
+\[f''(0) = 12 \cdot 0^2 \cdot e^0 + 4\cdot 0^3 \cdot e^0 + 4\cdot 0^3\cdot e^0 + 0^4 \cdot e^0= 0\]
+\[f''(0) \text{ hat Vorzeichenwechsel } - \to +\]
+\[f''(-4) = 12\cdot (-4)^2 \cdot e^{-4} + 4\cdot(-4)^3 \cdot e^{-4}+ 4\cdot(-4)^3\cdot e^{-4} + (-4)^4 \cdot e^{-4}\not = 0\] 
+\[ \mathbb{L} = \{ 0; -4\}\]
+Monotonie:
+\[I_1 = ]-\infty;-4[ \quad I_2 = ]-4;0[ \quad I_3 = ]0; \infty[\] 
+\[f'(-6) = + \ldots \rightarrow I_1\text{ist streng monoton wachsend}\]
+\[f'(-2) = - \ldots \rightarrow I_2\text{ist streng monoton fallend}\]
+\[f'(1) = + \ldots \rightarrow I_3\text{ist streng monoton wachsend}\]
+Wendestellen:
+\[f''(x) = 0 = 12x^2 \cdot e^x + 4x^3 \cdot e^x + 4x^3\cdot e^x + x^4 \cdot e^x = x^4 \cdot e^x + 8x^3 \cdot e^x + 12x^2 \cdot e^x\]
+\[f''(x)= e^x \cdot x^2 (x^2 + 8x +12) = e^x \cdot x^2 (x + 2)(x+6)\]
+\[f'''(x) = [x^4 \cdot e^x + 8x^3 \cdot e^x + 12x^2 \cdot e^x]' = 4x^3 \cdot e^x + e^x \cdot x^4 + 8(3x^2 \cdot e^x + e^x \cdot x^3) + 12(2x\cdot e^x+e^x\cdot  x^2)\]
+\[f'''(x) = e^x x^4 + 12e^xx^3 + 36 e^xx^2 + 24e^xx\]
+\[f'''(0) = 0\]
+\[f'''(-2) \not = 0\]
+\[f'''(-6)\not = 0\]
+\[\mathbb{L} = \{-6;-2;0\}\]
+Krümmung:
+\[f''(-10) = +\ldots \; \rightarrow \; ]\infty;-6[ \text{ ist linksgekrümmt}\]
+\[f''(-5) = -\ldots \; \rightarrow \;]-6;-2[ \text{ ist rechtsgekrümmt}\]
+\[f''(-1) = +\ldots \; \rightarrow \;]-2;\infty[ \text{ ist linksgekrümmt}\]
+Symetrie:
+\[f(x) = x^4 \cdot e^x\]
+\[f(-x) =  (-x)^4 \cdot e^{-x} = x^4 e^{-x} \not = f(x)\]
+\[-f(x) = - x^4 \cdot e^x \not = f(-x)\]
+\[ \Rightarrow \text{keine Symetrie}\]
+
+Asymptoten:
+\[x \to +\infty \; \rightarrow f(x) \to \infty \] 
+\[x \to -\infty \; \rightarrow f(x) \to 0\]
+\[\Rightarrow \text{Asymptoten: } \{y = 0\} \]
+
+
+\end{document}

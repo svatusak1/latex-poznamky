@@ -1,0 +1,39 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\section{Gebrochene Funktionen}
+\begin{definition}
+    Lässt sich der Funktionsterm von $f:x \to f(x)$ schreiben als Quotient zweier differenzierbaren Funktionen $g:x \to g(x), \ h:x\to h(x)$ mit $f(x) = \frac {g(x)}{h(x)}$ und $h(x+0) = 0$, so nennt man $x_0 \in \mathbb{R}$ eine \textbf{Definitionslücke } und schreibt $ D_f = \mathbb{R} \setminus \{x_0\}$. 
+    
+\end{definition}
+
+\begin{enumerate}[i)]
+    \item \[f(x) = \frac 1x\]
+        \[g(x) =  1 \; h(x) = x\]
+        \[h(x_0) = 0\; \Rightarrow x_0 = 0\]
+        \[\Rightarrow D_f = \mathbb{R} \setminus \{0\}\]
+
+    \item \[f(x) = \frac 1 {x^2}\]
+        \[g(x) = 1 \; ; \; h(x) = x^2\]
+        \[h(x_0) = 0 \; \Rightarrow x_0 = 0\]
+        \[\Rightarrow D_f = \mathbb{R} \setminus \{0\}\]
+    \item \[\frac{x-2}{x+2}\]
+        \[D_f = \mathbb{R} \setminus \{-2\}\]
+    \item \[f(x) = \frac {x^2 -4}{x+2} = \frac {(x+2)(x-2)}{x+2} = x-2\]

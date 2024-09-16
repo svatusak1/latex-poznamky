@@ -1,0 +1,46 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}[Stecken und Verschieben von Graphen]
+
+    Gegeben ist der Graph $G_f$ der Funktion g mit 
+    \[
+        g(x) = a \cdot f(c\cdot (x-c)) +d
+    \]
+    \[ a, b > 0 c, d, \in \mathbb{R}\]
+    entsteht aus dem Graphen $G_f$ von f durch:
+    \begin{enumerate}[i)]
+        \item Strekung in y-Richtung mit dem Faktor a
+        \item Streckung in x-Richtung mit dem Fakto $\frac 1b$
+        \item Verschiebung in pos. x-Richtung um c LE 
+        \item Verschiebung in pos. y-Richtung um d LE 
+    \end{enumerate}
+
+    für $ a<0$ findet zusätzlich zur Strekung in y-Richtung eine Spiegelung an der x-Achse statt.
+    für $b<0$ findet zusätzlich zur Strekung in x-Richtung eine Spiegelung an der y-Achse.
+    
+\end{definition}
+
+\begin{definition}[llgemeine Sinusfunktion]
+    
+\end{definition}
+
+
+\end{document}

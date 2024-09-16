@@ -1,0 +1,112 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{colback=yellow!10!white, colframe=red!50!black, 
+        highlight math style= {enhanced, %<-- needed for the ’remember’ options
+            colframe=red,colback=red!10!white,boxsep=0pt}
+        }
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{definition}
+
+    Lässt sich der Funktion von $f:x \to f(x) $ schreiben als Quotient zweier differenzierbaren Funktionen $g:x \to g(x)$, $h:x\to h(x) $ mit $f(x) = \frac {g(x)}{h(x)}$ und gilt $g(x_0) \not = 0$, so ist $x_0 \in \mathbb{R}$ eine \textbf{Polstelle (mit oder ohne Vorzeichenwechsel (VZW) )} und die Gerade $x = x_0$ heißt \textbf{senkrechte Asymptote} (s.A) des Graphen $G_f$ von $f$.
+    
+\end{definition}
+
+\begin{enumerate}
+    \item $f(x) = \frac 1x \; D_f = \mathbb{R} \setminus {0}$
+        \[
+        \]
+\end{enumerate}
+
+\begin{definition}
+    
+    Lässt sich der Funktionsterm von $f:x \to f(x)$ schreiben als Quotient zweier differenzierbaren Funktion $g:x \to g(x)$, $h:x \to h(x)$ mit $f(x) = \frac{g(x)}{h(x)}$ und gilt $g(x_0) = 0$, $h(x_0) = 0$, dann lässt sich der Funktionsterm durch \textbf{Kürzen des Faktors} $(x-x_0)$ umwandeln. Hat der neue Termm bei $x_0 \in \mathbb{R}$ keine Definitionslücke, so ist die Stelle $x_0 \in \mathbb{R}$ \textbf{keine Polstelle}.
+    
+\end{definition}
+
+\subsection{Beispiele Unteruchung auf senkrechte Asymptote und Verhalten bei Annäherung an die Definitionslücke}
+
+\begin{enumerate}[i)]
+    \item $f(x) = \frac 1{(x-1)^2(x+2)}$
+        \[h(x) = (x-1)^2(x+2) = 0\]
+        \[\Rightarrow x_1 = 1 \vee x_2 = -2\]
+        \[\Rightarrow D_f = \mathbb{R} \setminus \{-2; 1\} \; \text{Pol ohne VZW}\]
+        \begin{align*}
+            x_1 = 1: & f(x) = \frac 1 {x+2} \cdot \frac 1 {(x-1)^2}  \\
+                     &&&+\infty \; \text{für} \; x \to 1 \; \text{und} \; x < 1\\
+                     &&&+\infty \; \text{für} \; x \to 1 \; \text{und} \; x > 1 \\
+                     &\Rightarrow \; \text{Pol ohne VZW}\; x \to 1\\
+            x_2 = -2: & f(x) = \frac 1 {x+2} \cdot \frac 1 {(x-1)^2} \\
+                      &&&-\infty \; \text{für} \; x\to -2 \; \text{und} \; x < -2\\
+                      &&&+\infty \; \text{für} \;  x \to -2 \; \text{und} \; x > -2\\
+                      &\Rightarrow \; \text{Pol mit VZW} \; x\to -2
+        \end{align*}
+
+    \item $f(x) = \frac 1{(x-3)(x+3)} \quad D_f = \mathbb{R}\setminus \{\pm 3\}$
+        \begin{itemize}
+            \item $x_1 = 3$ ist Pol mit VZW; x=3 ist s.A.
+            \item $x_2 = -3$ ist Pol mit VZW; x = -3 ist s.A.
+        \end{itemize}
+    \item $f(x) = \frac {(x+5)}{(x+5)(x-5)^2}$ $D_f = \mathbb{R} \setminus \{\pm5\}$
+    \[\frac{\cancel{(x+5)}\;1}{\cancel{(x+5)}(x-5)^2} = \frac 1{(x-5)^2}\]
+            \begin{itemize}
+                \item $x_1 = 5$ Pol ohne Vorzeichenwechsel, x=5 s.A.
+                \item $x_2 = -5$ Definitionslücke
+            \end{itemize}
+    \item $f(x) = \frac {(x+2)^4(x-1)^5(x+3)(x-3)}{(x+3)(x-1)^6(x+2)^3}$
+        \[ \frac {(x+2)^{\cancel{4}}\cancel{(x-1)^5}\cancel{(x+3)}(x-3)}{\cancel{(x+3)}(x-1)^{\cancel{6}} \cancel{(x+2)^3}} = \frac {(x+2)(x-3)}{x-1}\]
+        \begin{itemize}
+            \item $x_1 = 1$ Pol mit Vorzeichenwechsel
+            \item $x_2 = -3$ Definitionslücke
+            \item $x_3 = -2$ Definitionslücke
+        \end{itemize}
+        \hfill
+    \item 
+        \begin{itemize}
+            \item $x_1 = 1$ Pol mit Vorzeichenwechsel
+            \item $x_2 = -3$ Pol ohne Vorzeichenwechsel
+            \item $x_3 = 5$ Definitionslücke ohne Polstelle
+        \end{itemize}
+        \[\Rightarrow f(x) = \frac {x-5}{(x-1)(x+3)^2(x-5)}\]
+    \item \[f(x) = \frac {1-x}{(x-3)^2}\]
+        \begin{itemize}
+            \item $x_1 = 3$ pol ohne Vorzeichenwechsel, x = 3 s.A.
+
+        \end{itemize}
+        $D_f = \mathbb{R} \setminus \{3\}$
+
+    \item \[f(x) = \frac {(x-5)}{(2-x)(2+x)}\]
+        \begin{itemize}
+            \item $x_1 = 2$ Pol mit Vorzeichenwechsel, x=2 s.A.
+            \item $x_2 = -2$ Pol mit Vorzeichenwechsel, x = -2 s.A.
+        \end{itemize}
+        $D_f = \mathbb{R} \setminus \{\pm2\}$
+    \item \[f(x) = \frac {1x}{(x-3)^2} \; D_f = \mathbb{R} \setminus \{3\}\]
+        \begin{itemize}
+            \item $x_1 = 3$ Pol ohne Vorzeichenwechsel, s.A. x=3
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\end{document}

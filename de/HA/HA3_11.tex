@@ -1,0 +1,77 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{marvosym}
+\let\marvosymLightning\Lightning
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{fillbetween}
+
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle, draw, inner sep=2pt] (char) {#1};}}
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+
+\begin{itemize}
+    \item[8]
+        \[f(x) = x^3 - 6x^2 +12x-7\]
+        g(x) ist um 4 in x-Richtung und -3 in y-Richtung verschoben uns ist zum W = (2|1) punktsymetrisch
+        \begin{enumerate}[a)]
+            \item \[g(x) = (x-4)^3 - 6(x-4)^2 + 12(x-4)-7 -3\]
+            \item $W_g = (6|-2)$ der Punkt ist ähnlich wie der Graph verschoben
+        \end{enumerate}
+    \item[10]
+        \[f(x) = x\cdot e^x\]
+        \begin{enumerate}[a)]
+            \item \hfill \break
+                \begin{enumerate}
+                    \item[Tiefpunkt]
+                        \[f'(x) = e^x + x \cdot e^x = e^x(x+1)\]
+                        \[f'(x) = 0 = e^x(x+1)\]
+                        \[\Rightarrow x = -1 \Rightarrow P_T = (-1|f(-1)) = (-1| - \frac{1}{e})\]
+                    \item[Wendepunkt]
+                        \[f''(x) = f'(x)' = e^x +e^x + x \cdot e^x = e^x(2+x)\]
+                        \[f''(x) = 0 = e^x(2+x)\]
+                        \[\Rightarrow x = -2 \Rightarrow P_W = (-2|f(-2)) = (-2|- \frac{2}{e^2} )\]
+                \end{enumerate}
+            \item $ g(x) = -(x+2) \cdot e^{x+2} +1 $
+                \begin{itemize}
+                    \item Spiegelung an der x-Achse
+                    \item Verschiebung im positive x-Richtung um 2
+                    \item Verschiebung im positive y-Richtung um 1
+                \end{itemize}
+                \begin{enumerate}
+                    \item[Tiefpunkt]
+                        $H(3|- \frac 1{e}-1)$
+                    \item[Wendepunkt]
+                        $H(1|- \frac{2}{e^2}-1 )$
+                \end{enumerate}
+        \end{enumerate}
+
+    \item[11a)]
+        \[ \int_0^1x^3dx = [\frac{1}{4}x^4]_0^1 = \frac{1}{4} \]
+        \[ \int_2^3 ((x-2)^3+1)dx = \frac{1}{4} + 1\]
+    \item[12]
+        f ist punktsymetrisch zum Ursprung
+        g ist achsensymetrisch zum y-Achse
+        \begin{enumerate}
+            \item[b)] $h(x) = 2g(x) +1$
+                \[h(-x) = 2g(-x) +1 = 2g(x) +1 = h(x) \]
+                $\Rightarrow$ y-Achse symetrisch
+            \item[d)] $h(x) = x \cdot f(x)$
+                \[h(-x) = -x \cdot f(-x) = -x (-f(x)) = xf(x) = h(x)\]
+                $\Rightarrow$ y-Achse symetrisch
+            \item[e)] $ h(x) = f(g(x))$
+                \[h(-x) = f(g(-x)) = f(g(x)) =h(x)\]
+                $\Rightarrow$ y-Achse symetrisch
+        \end{enumerate}            
+    \item[14]
+        
+\end{itemize}
+\end{document}

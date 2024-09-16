@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+
+\newtheorem{definition}{Definition}
+
+\begin{document}
+\chapter{Integralen}
+\section{Das Integral als orientierte Flacheinhalt}
+
+\subsection{Beispiel für naherungsweise Berechnung von Flacheinhalt}
+    
+    
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = \(x\),
+	ylabel = \(y\),
+	xtick distance = 0.5,
+	ytick distance = 1,
+	title = {Untersumme},
+]
+\addplot[
+	color=black,
+	domain = 0:2,
+	]{x^2};
+	
+\draw (axis cs: 0,0) -- (axis cs: 0.5,0)[color = red];
+\draw (axis cs: 0.5,0) rectangle (axis cs: 1,0.25)[color = red];
+\draw (axis cs: 1,0) rectangle (axis cs: 1.5,1)[color = red];
+\draw (axis cs: 1.5,0) rectangle (axis cs: 2,2.25)[color = red];
+\end{axis}
+\end{tikzpicture}
+
+\begin{definition}
+sei $[a;b] \leq D_f$ mit $f(x) \geq 0$ (Untersumme) f.a. $x \in [a;b]$
+Man erhält den \underline{Flächeinfalt zwichen $G_f$ und der x-Achse über [a;b]} näherungsweise mit \underline{Stützstelle} und \underline{Intervalbreite}
+\[A \approx S_n = \overbrace{\Delta x}^{\text{Intervalbreite}} \overbrace{(f(\Delta x \cdot 0)+\dotsc + f(\Delta x \cdot (n-1)))}^{\text{Stützstelle} }\text{ mit } \Delta x =\frac {b-a}n\]
+\end{definition}
+
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = \(x\),
+	ylabel = \(y\),
+	xtick distance = 0.5,
+	ytick distance = 1,
+	title = {Obersumme},
+]
+\addplot[
+	color=black,
+	domain = 0:2,
+	]{x^2};
+	
+\draw (axis cs: 0,0) rectangle (axis cs: 0.5,0.25)[color = green];
+\draw (axis cs: 0.5,0) rectangle (axis cs: 1,1)[color = green];
+\draw (axis cs: 1,0) rectangle (axis cs: 1.5,2.25)[color = green];
+\draw (axis cs: 1.5,0) rectangle (axis cs: 2,4)[color = green];
+\end{axis}
+\end{tikzpicture}
+
+\[A \approx S_n = \Delta x (f(\Delta x \cdot 1)+\dotsc + f(\Delta x \cdot n)) \text{ mit } \Delta x = \frac {b-a}n\]
+
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = \(x\),
+	ylabel = \(y\),
+	xtick distance = 0.5,
+	ytick distance = 1,
+	title = {Rechtecksumme},
+]
+\addplot[
+	color=black,
+	domain = 0:2,
+	]{x^2};
+	
+\draw (axis cs: 0,0) rectangle (axis cs: 0.5,0.0625)[color = blue];
+\draw (axis cs: 0.5,0) rectangle (axis cs: 1,0.5625)[color = blue];
+\draw (axis cs: 1,0) rectangle (axis cs: 1.5,1.5625)[color = blue];
+\draw (axis cs: 1.5,0) rectangle (axis cs: 2,3.0625)[color = blue];
+\end{axis}
+\end{tikzpicture}
+
+\[A \approx S_n = \Delta x (f(\Delta x \cdot 0+ \Delta x \frac 12)+\dotsc + f(\Delta x \cdot (n-1)+\Delta x \frac 12)) \text{ mit } \Delta x = \frac {b-a}n\]
+
+
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass{book}
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{pgfplots}
+\newtheorem{definition}{Definition}
+\begin{document}
+\begin{definition} 
+    Sei f auf einem Intervall I differenzierbar. Zu jeder Zahl $u\in I$ heißt die Funktion $J_u$ mit $ J_u (x) = \int_u^x f(t)dt $ mit $x\in I$ \underline{Integralfunktion von d zur unteren Grenze u } (gilt auch ven $ u > x$)
+\end{definition}
+
+Die Funktion $J_u(x)$ geben den orientierten Flächeinhalt zwischen den Graphen von f und der x-Achse über [u; x] an!
+
+Beispiel:
+
+$J_0 = f(x) - 2$
+
+$f(x) = x^2$
+\[J_0(x) = \int_0^x t^2 dt = [ \frac{1}{3} t^3]_0^x = F(x)-F(0) =\frac13 x^3\]
+\[J_1(x) = \int_1^x t^2 dt = [\frac13 t^3]_1^x = \frac 13 x^3 - \frac13 1^3 = \frac 1x^3 - \frac 13\]
+
+\end{document}
